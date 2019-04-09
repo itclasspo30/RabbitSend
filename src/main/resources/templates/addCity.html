@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <meta charset="UTF-8" />
+      <title>Add Page</title>
+      <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+   </head>
+   <body>
+      <h1>Create City:</h1>
+          
+      <form th:action="@{/addCity}" th:object="${city}" method="POST">
+         
+         <table>
+             <tr>
+                 <td>
+                     Name:
+                 </td>
+                 <td>
+                     <input type="text" th:field="*{name}" /> 
+                 </td>
+             </tr>
+             <tr>
+                 <td>
+                     Population:
+                 </td>
+                 <td>
+                     <input type="number" th:field="*{population}" />
+                 </td>
+             </tr>
+             
+         </table>
+         <br/>
+         <input type="submit" value="Create" />
+      </form>
+      
+      <p th:text="${text}" />
+       
+      <br/>
+            
+       
+   </body>
+</html>
